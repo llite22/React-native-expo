@@ -1,4 +1,6 @@
-import { Button, Image, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, Image, StyleSheet, View } from "react-native";
+import Input from "@/shared/Input";
+import { Colors, Gaps } from "@/shared/tokens";
 
 export default function Index() {
   return (
@@ -6,8 +8,8 @@ export default function Index() {
       <View style={styles.content}>
         <Image style={styles.logo} resizeMode="contain" source={require("../assets/logo.png")} />
         <View style={styles.form}>
-          <TextInput style={styles.input} placeholder="Email" />
-          <TextInput style={styles.input} placeholder="Password" />
+          <Input placeholder="Email" />
+          <Input placeholder="Password" />
           <Button title="Войти" />
         </View>
       </View>
@@ -20,20 +22,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flex: 1,
     padding: 55,
-    backgroundColor: "#16171D",
+    backgroundColor: Colors.black,
   },
   content: {
     alignItems: "center",
-    gap: 50,
+    gap: Gaps.g50,
   },
   logo: {
     width: 220,
   },
   form: {
     alignSelf: "stretch",
-    gap: 16,
-  },
-  input: {
-    backgroundColor: "#2e2d3d",
+    gap: Gaps.g16,
   },
 });
