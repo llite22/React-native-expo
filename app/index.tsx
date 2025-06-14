@@ -9,10 +9,10 @@ export default function Index() {
         <Image style={styles.logo} resizeMode="contain" source={require("../assets/logo.png")} />
         <View style={styles.form}>
           <Input placeholder="Email" />
-          <Input placeholder="Password" />
+          <Input isPassword placeholder="Password" />
           <Button title="Войти" />
         </View>
-      </View>
+  </View>
     </View>
   );
 }
