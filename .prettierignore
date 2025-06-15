@@ -1,0 +1,17 @@
+# Игнорируем сгенерированные папки и файлы
+node_modules
+dist
+build
+android
+ios
+.expo
+.expo-shared
+coverage
+
+# Настройки IDE
+.vscode
+.idea
+.DS_Store
+
+# Логи и временные файлы
+*.log
