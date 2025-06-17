@@ -1,7 +1,8 @@
 import { Colors, Gaps } from '@/shared/tokens';
 import { Button, ErrorNotification, Input } from '@/shared/ui';
+import { Link } from 'expo-router';
 import { useState } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 export default function Index() {
 	const [error, setError] = useState<string | undefined>('');
@@ -20,6 +21,9 @@ export default function Index() {
 					<Input isPassword placeholder="Password" />
 					<Button text="Войти" onPress={alert} />
 				</View>
+				<Link href="/restore">
+					<Text>Восстановить пароль</Text>
+				</Link>
 			</View>
 		</View>
 	);
