@@ -5,6 +5,7 @@ import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-cont
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import { AuthProvider } from '@/app-providers/AuthProvider';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -31,23 +32,26 @@ export default function RootLayout() {
 
 	return (
 		<SafeAreaProvider>
-			<StatusBar style="light" />
-			<Stack
-				screenOptions={{
-					contentStyle: {
-						backgroundColor: Colors.black,
-						paddingTop: insets.top,
-					},
-					headerShown: false,
-				}}
-			>
-				<Stack.Screen
-					name="restore"
-					options={{
-						presentation: 'modal',
+			<AuthProvider>
+				<StatusBar style="light" />
+				<Stack
+					screenOptions={{
+						contentStyle: {
+							backgroundColor: Colors.black,
+							paddingTop: insets.top,
+						},
+						headerShown: false,
 					}}
-				/>
-			</Stack>
+				>
+					<Stack.Screen name="login" />
+					<Stack.Screen
+						name="restore"
+						options={{
+							presentation: 'modal',
+						}}
+					/>
+				</Stack>
+			</AuthProvider>
 		</SafeAreaProvider>
 	);
 }

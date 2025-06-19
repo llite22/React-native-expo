@@ -15,7 +15,7 @@ export default function NotFound() {
 				<Text style={styles.text}>
 					Ооо... что-то пошло не так. Попробуйте вернуться на главный экран
 				</Text>
-				<CustomLink href="/" text="На главный экран" />
+				<CustomLink href="/login" text="На главный экран" />
 			</View>
 		</SafeAreaView>
 	);
