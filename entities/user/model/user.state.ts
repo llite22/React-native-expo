@@ -2,10 +2,7 @@ import { createContext } from 'react';
 import { User } from './user.model';
 
 export const profileContext = createContext<UserState>({
-	profile: {
-		id: 1,
-		name: 'Антон',
-	},
+	profile: null,
 	isLoading: false,
 	error: null,
 });

@@ -1,7 +1,7 @@
 import { Colors } from '@/shared/tokens';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
@@ -10,7 +10,6 @@ import { AuthProvider } from '@/app-providers/AuthProvider';
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-	const insets = useSafeAreaInsets();
 	const [loaded, error] = useFonts({
 		'FiraSans-Regular': require('../assets/fonts/FiraSans-Regular.ttf'),
 		'FiraSans-SemiBold': require('../assets/fonts/FiraSans-SemiBold.ttf'),
@@ -38,7 +37,6 @@ export default function RootLayout() {
 					screenOptions={{
 						contentStyle: {
 							backgroundColor: Colors.black,
-							paddingTop: insets.top,
 						},
 						headerShown: false,
 					}}
